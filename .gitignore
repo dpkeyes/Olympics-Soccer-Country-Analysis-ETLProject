@@ -1,2 +1,4 @@
 .git
-soccer_data_raw.csv
+.ipynb_checkpoints
+Resources/
+config.py
