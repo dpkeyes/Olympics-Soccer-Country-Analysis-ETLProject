@@ -1,7 +1,7 @@
 CREATE TABLE soccer(
 	id INT PRIMARY KEY,
 	date DATE,
-	year DATE,
+	year INT,
 	month TEXT,
 	home_team TEXT,
 	away_team TEXT,
