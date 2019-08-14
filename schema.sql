@@ -34,11 +34,9 @@ CREATE TABLE athletes(
 
 CREATE TABLE regions (
 	NOC INT PRIMARY KEY,
-	region TEXT,
-	notes TEXT
+	country_code TEXT,
+	country TEXT
 );
-
-
 
 CREATE TABLE summer(
 	id INT PRIMARY KEY,
@@ -67,7 +65,7 @@ CREATE TABLE winter(
 );
 
 CREATE TABLE country(
-	country TEXT PRIMARY KEY,
+	country_name TEXT PRIMARY KEY,
 	country_code TEXT,
 	year INT,
 	gdp_growth_annual FLOAT,
