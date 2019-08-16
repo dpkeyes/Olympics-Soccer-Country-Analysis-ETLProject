@@ -1,17 +1,17 @@
 ## Goal
 Practice ETL skills by extracting data from multiple sources, transforming that data using Pandas and SQLAlchemy, and loading the data into Postgres. 
 
-## Extraction Process
+## Extract
 
 Our team pulled data from 4 sources:
-[World Development Indicators](https://datacatalog.worldbank.org/dataset/world-development-indicators)
-[International Football Results from 1872 to 2019](https://www.kaggle.com/martj42/international-football-results-from-1872-to-2017)
-[120 years of Olympic History: Athletes and Results](https://www.kaggle.com/heesoo37/120-years-of-olympic-history-athletes-and-results#noc_regions.csv)
-[Olympic Sports and Medals, 1896-2014](https://www.kaggle.com/the-guardian/olympic-games)
+* [World Development Indicators](https://datacatalog.worldbank.org/dataset/world-development-indicators)
+* [International Football Results from 1872 to 2019](https://www.kaggle.com/martj42/international-football-results-from-1872-to-2017)
+* [120 years of Olympic History: Athletes and Results](https://www.kaggle.com/heesoo37/120-years-of-olympic-history-athletes-and-results#noc_regions.csv)
+* [Olympic Sports and Medals, 1896-2014](https://www.kaggle.com/the-guardian/olympic-games)
 
 All data sources were available in CSV format from the source websites so we downloaded the data to our local directory and imported into a Jupyter Notebook using Pandas to perform the Transform and Load processes.
 
-## Transformation
+## Transform
 
 After the datasets were loaded into Jupyter Notebooks, we needed to perform standard data cleansing: dropping unnecessary columns, renaming columns, changing data types, and creating new columns. More specific steps for various tables are as follows:
 
@@ -26,5 +26,5 @@ Then, in order to make this table easier to compare against the `summer` and `wi
 #### Olympic Data
 We decided to keep four out of the 5 tables here. Data transformation included splitting athlete names into first and last name columns, dropping unnecessary columns, adding unique id columns for primary keys, and joining the regions table with a subset from the country database table in order to create a table with noc, country code, and country name. Most notably, we had to add extra noc and country code columns to ensure we could use country name as a primary key in the regions table.
 
-## Loading Process
+## Load
 To load all the data, we used the PostgreSQL driver, `psycopg2` to connect to the Postgres server. Individual passwords were then imported in from an external `config` file to complete the connection. After the engine was created, we then loaded each data frame into its corresponding table in the database. 
