@@ -9,21 +9,21 @@ CREATE TABLE soccer(
 	away_score INT,
 	tournament TEXT,
 	city TEXT,
-	country TEXT,
+	country_name TEXT,
 	neutral TEXT,
 	season TEXT
 );
 
-CREATE TABLE athletes(
+CREATE TABLE athlete(
 	id INT PRIMARY KEY,
-	name TEXT,
+	last_name TEXT,
+	first_name TEXT,
 	sex TEXT,
 	age FLOAT,
 	height FLOAT,
 	weight FLOAT,
 	team TEXT,
 	NOC TEXT,
-	games TEXT,
 	year INT,
 	season TEXT,
 	city TEXT,
@@ -35,7 +35,7 @@ CREATE TABLE athletes(
 CREATE TABLE regions (
 	NOC INT PRIMARY KEY,
 	country_code TEXT,
-	country TEXT
+	country_name TEXT
 );
 
 CREATE TABLE summer(
@@ -44,9 +44,10 @@ CREATE TABLE summer(
 	city TEXT,
 	sport TEXT,
 	discipline TEXT,
-	athlete TEXT,
-	country TEXT,
-	gender TEXT,
+	athlete_last_name TEXT,
+	athlete_first_name TEXT,
+	country_code TEXT,
+	sex TEXT,
 	event TEXT,
 	medal TEXT
 );
@@ -57,15 +58,16 @@ CREATE TABLE winter(
 	city TEXT,
 	sport TEXT,
 	discipline TEXT,
-	athlete TEXT,
-	country TEXT,
-	gender TEXT,
+	athlete_last_name TEXT,
+	athlete_first_name TEXT,
+	country_code TEXT,
+	sex TEXT,
 	event TEXT,
 	medal TEXT
 );
 
 CREATE TABLE country(
-	country_name TEXT PRIMARY KEY,
+	country_name TEXT,
 	country_code TEXT,
 	year INT,
 	gdp_growth_annual FLOAT,
@@ -74,5 +76,6 @@ CREATE TABLE country(
 	gini_index FLOAT,
 	pop_density FLOAT,
 	pop_growth_annual FLOAT,
-	pop_total INT
+	pop_total INT,
+	PRIMARY KEY(country_name, country_code, year)
 );
