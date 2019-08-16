@@ -24,7 +24,7 @@ CREATE TABLE athlete(
 	height FLOAT,
 	weight FLOAT,
 	team TEXT,
-	NOC TEXT,
+	noc TEXT,
 	year INT,
 	season TEXT,
 	city TEXT,
