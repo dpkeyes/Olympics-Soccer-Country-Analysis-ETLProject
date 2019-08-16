@@ -1,6 +1,8 @@
 ## Goal
 Practice ETL skills by extracting data from multiple sources, transforming that data using Pandas and SQLAlchemy, and loading the data into Postgres. 
 
+![Olympic Data ERD](https://github.com/dpkeyes/etl-project/blob/master/images/olympic_data_erd.png?raw=true)
+
 ## Extract
 
 Our team pulled data from 4 sources:
