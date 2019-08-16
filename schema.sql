@@ -16,6 +16,7 @@ CREATE TABLE soccer(
 
 CREATE TABLE athlete(
 	id INT PRIMARY KEY,
+	athlete_id INT, 
 	last_name TEXT,
 	first_name TEXT,
 	sex TEXT,
@@ -33,9 +34,12 @@ CREATE TABLE athlete(
 );
 
 CREATE TABLE regions (
-	NOC INT PRIMARY KEY,
+	noc_1 TEXT,
+	noc_2 TEXT,
+	noc_3 TEXT,
+	noc_4 TEXT,
 	country_code TEXT,
-	country_name TEXT
+	country_name TEXT PRIMARY KEY
 );
 
 CREATE TABLE summer(
