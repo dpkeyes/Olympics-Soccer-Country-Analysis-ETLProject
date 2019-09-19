@@ -80,6 +80,6 @@ CREATE TABLE country(
 	gini_index FLOAT,
 	pop_density FLOAT,
 	pop_growth_annual FLOAT,
-	pop_total INT,
+	pop_total BIGINT,
 	PRIMARY KEY(country_name, country_code, year)
 );
